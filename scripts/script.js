@@ -4,6 +4,7 @@ let userChoice;
 
 let userWinCount = 0;
 let computerWinCount = 0;
+let roundCount = 1;
 
 function getUserChoice() {
     userChoice = window.prompt("Enter your choice: ");
@@ -25,6 +26,9 @@ function getComputerChoice(){
 function round(){
     let userChoice = getUserChoice();
     let computerChoice = getComputerChoice();
+
+    console.log("Round number: " + roundCount);
+    roundCount++;
     console.log("User choice: " + userChoice);
     console.log("Computer choice: " + computerChoice);
 
@@ -61,10 +65,10 @@ function game(numberOfRounds){
     for (i=1; i <= numberOfRounds; i++ ){
         round();
     }
-
     console.log("User wins: " + userWinCount);
     console.log("Computer wins: " + computerWinCount);
     console.log(WhoWon() + " is the winner!!!");
+    roundCount = 1;
 }
 
 function WhoWon(){
