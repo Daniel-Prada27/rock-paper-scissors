@@ -43,7 +43,11 @@ function round(){
     }
 }
 
-
+function game(numberOfRounds){
+    for (i=1; i <= numberOfRounds; i++ ){
+        round();
+    }
+}
 
 
 
