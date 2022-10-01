@@ -14,6 +14,35 @@ function getUserChoice() {
     return userChoice;
 }
 
+function round(){
+    let userChoice = getUserChoice();
+
+    console.log("User choice: " + userChoice);
+    console.log("Computer choice: " + computerChoice);
+
+    if (userChoice == computerChoice){
+        console.log("Draw");
+    } else if (userChoice == "Rock") {
+        if (computerChoice == "Paper") {
+            console.log("Computer wins");
+        } else if (computerChoice == "Scissors"){
+            console.log("User wins");
+        }
+    } else if (userChoice == "Scissors"){
+        if (computerChoice == "Rock"){
+            console.log("Computer wins");
+        } else if (computerChoice == "Paper"){
+            console.log("User wins");
+        }
+    } else if (userChoice == "Paper"){
+        if (computerChoice == "Rock"){
+            console.log("User wins");
+        } else if (computerChoice == "Scissors"){
+            console.log("Computer wins");
+        }
+    }
+}
+
 
 
 
