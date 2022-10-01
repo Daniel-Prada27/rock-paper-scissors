@@ -71,8 +71,10 @@ function WhoWon(){
     let finalWinner;
     if (userWinCount > computerWinCount){
         finalWinner = "User";
-    } else {
+    } else if (userWinCount < computerWinCount){
         finalWinner = "Computer";
+    } else {
+        finalWinner = "Draw"
     }
     return finalWinner;
 }
