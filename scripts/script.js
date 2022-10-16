@@ -5,6 +5,9 @@ const scissorsBtn = document.getElementById('scissors-btn');
 const playerChoiceText = document.getElementById('player-choice');
 const computerChoiceText = document.getElementById('computer-choice');
 const roundWinner = document.getElementById('round-winner');
+const playerWinCountText = document.getElementById('player-counter');
+const computerWinCountText = document.getElementById('computer-counter');
+const aaa = document.getElementById('final-winner');
 
 const options = ["Rock", "Paper", "Scissors"];
 let computerChoice;
@@ -51,58 +54,54 @@ function round(){
     let userChoice = getUserChoice();
     let computerChoice = getComputerChoice();
 
-    console.log("Round number: " + roundCount);
     roundCount++;
-    console.log("User choice: " + userChoice);
-    playerChoiceText.textContent = userChoice;
-    console.log("Computer choice: " + computerChoice);
-    computerChoiceText.textContent = computerChoice;
+    playerChoiceText.textContent = "Your choice: " + userChoice;
+    computerChoiceText.textContent = "Computer choice: " + computerChoice;
 
     if (userChoice == computerChoice){
-        console.log("Draw");
         roundWinner.textContent = "Draw";
     } else if (userChoice == "Rock") {
         if (computerChoice == "Paper") {
-            console.log("Computer wins");
             roundWinner.textContent = "Computer wins";
             computerWinCount++;
+            computerWinCountText.textContent = "Computer wins: " + computerWinCount;
         } else if (computerChoice == "Scissors"){
-            console.log("User wins");
-            roundWinner.textContent = "User wins";
+            roundWinner.textContent = "You win";
             userWinCount++;
+            playerWinCountText.textContent = "Player wins: " + userWinCount;
         }
     } else if (userChoice == "Scissors"){
         if (computerChoice == "Rock"){
-            console.log("Computer wins");
             roundWinner.textContent = "Computer wins";
             computerWinCount++;
+            computerWinCountText.textContent = "Computer wins: " + computerWinCount;
         } else if (computerChoice == "Paper"){
-            console.log("User wins");
-            roundWinner.textContent = "User wins";
+            roundWinner.textContent = "You win";
             userWinCount++;
+            playerWinCountText.textContent = "Player wins: " + userWinCount;
         }
     } else if (userChoice == "Paper"){
         if (computerChoice == "Rock"){
-            console.log("User wins");
-            roundWinner.textContent = "User wins";
+            roundWinner.textContent = "You win";
             userWinCount++;
+            playerWinCountText.textContent = "Player wins: " + userWinCount;
         } else if (computerChoice == "Scissors"){
-            console.log("Computer wins");
             roundWinner.textContent = "Computer wins";
             computerWinCount++;
+            computerWinCountText.textContent = "Computer wins: " + computerWinCount;
         }
     }
 }
 
-// function game(numberOfRounds){
-//     for (i=1; i <= numberOfRounds; i++ ){
-//         round();
-//     }
-//     console.log("User wins: " + userWinCount);
-//     console.log("Computer wins: " + computerWinCount);
-//     console.log(WhoWon() + " is the winner!!!");
-//     roundCount = 1;
-// }
+function game(numberOfRounds){
+    for (i=1; i <= numberOfRounds; i++ ){
+        round();
+    }
+    console.log("User wins: " + userWinCount);
+    console.log("Computer wins: " + computerWinCount);
+    console.log(WhoWon() + " is the winner!!!");
+    roundCount = 1;
+}
 
 // function WhoWon(){
 //     let finalWinner;
